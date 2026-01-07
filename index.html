@@ -26,23 +26,6 @@
         <p>Krass dass Du hergefunden hast!<br> Ich bin ein junger Typ, der gern zockt! :D Ich dachte mir einfach, ich nehme Dich einfach mit auf der Reise durch die verschiedensten Games und entertaine Dich!</p>
     </section>
 
-    <section id="twitch-content">
-        <div id="live-container" style="display: none;">
-            <h2>🔴 LIVE auf Twitch</h2>
-            <div class="video-wrapper">
-                <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div id="vod-container">
-            <h2>Neuester VOD</h2>
-            <div class="video-wrapper">
-                <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io&autoplay=false" allowfullscreen></iframe>
-            </div>
-            <p id="vodFallback" style="margin-top:15px;color:#888;display:none;">Aktuell kein Video verfügbar.</p>
-        </div>
-    </section>
-
     <section id="socials">
         <h2>Socials</h2>
         <div class="social-grid">
@@ -61,6 +44,23 @@
         </div>
     </section>
 
+    <section id="twitch-content">
+        <div id="live-container" style="display: none;">
+            <h2>🔴 LIVE auf Twitch</h2>
+            <div class="video-wrapper">
+                <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="vod-container">
+            <h2>Neuester VOD</h2>
+            <div class="video-wrapper">
+                <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io&autoplay=false" allowfullscreen></iframe>
+            </div>
+            <p id="vodFallback" style="margin-top:15px;color:#888;display:none;">Aktuell kein Video verfügbar.</p>
+        </div>
+    </section>
+
     <section id="chat">
         <h2>Live-Chat</h2>
         <iframe class="chat-dark" src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout=true"></iframe>
@@ -70,7 +70,6 @@
 <footer>© 2026 Jason_Crossbow</footer>
 
 <script>
-    // Scroll-Animation
     function handleScroll(){
         document.querySelectorAll('section').forEach(sec=>{
             const rect = sec.getBoundingClientRect();
@@ -82,7 +81,6 @@
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('load', handleScroll);
 
-    // Twitch Status & Video-Switch Logik
     async function updateTwitchDisplay() {
         const liveContainer = document.getElementById('live-container');
         const vodContainer = document.getElementById('vod-container');
@@ -93,12 +91,10 @@
             const uptime = await response.text();
 
             if (uptime.toLowerCase().includes('offline')) {
-                // OFFLINE
                 statusText.innerHTML = '⚪ Streamstatus: Offline';
                 liveContainer.style.display = 'none';
                 vodContainer.style.display = 'block';
             } else {
-                // LIVE
                 statusText.innerHTML = '🔴 Streamstatus: LIVE';
                 liveContainer.style.display = 'block';
                 vodContainer.style.display = 'none';
@@ -109,8 +105,7 @@
     }
 
     updateTwitchDisplay();
-    setInterval(updateTwitchDisplay, 120000); // Alle 2 Min prüfen
+    setInterval(updateTwitchDisplay, 120000);
 </script>
-
 </body>
 </html>
