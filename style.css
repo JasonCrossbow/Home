@@ -48,15 +48,28 @@ header p { font-size: 1.3rem; margin-bottom: 15px; }
   gap: 20px; 
   margin-top: 25px; 
 }
+
 #emote-banner img { 
   width: 50px; 
   height: 50px; 
   object-fit: contain;
   transition: transform 0.3s ease; 
 }
-#emote-banner img:nth-child(2) { transform: scale(1.25); }
-#emote-banner img:hover { transform: scale(1.2); }
-#emote-banner img:nth-child(2):hover { transform: scale(1.45); }
+
+/* Das mittlere Emote ist standardmäßig etwas größer */
+#emote-banner img:nth-child(2) { 
+  transform: scale(1.3); 
+}
+
+/* Hover-Effekt für das 1. und 3. Emote */
+#emote-banner img:hover { 
+  transform: scale(1.2); 
+}
+
+/* Spezieller Hover für das mittlere Emote, damit es beim Drüberfahren noch größer wird */
+#emote-banner img:nth-child(2):hover { 
+  transform: scale(1.5); 
+}
 
 /* --- SEKTIONEN --- */
 section {
