@@ -1,0 +1,112 @@
+/* Grundlegendes Design */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ccc;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #050507;
+  background-image:
+    radial-gradient(circle at top, rgba(145,70,255,0.15), transparent 55%),
+    linear-gradient(to bottom, rgba(255,255,255,0.03), transparent 60%);
+}
+
+/* Header */
+header {
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 15px #9146FF;
+}
+header h1 { font-size: 3rem; margin-bottom: 10px; }
+header p { font-size: 1.3rem; margin-bottom: 15px; }
+
+.btn {
+  padding: 12px 30px;
+  background: #9146FF;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+.btn:hover { transform: scale(1.1); }
+
+/* Emote Banner */
+#emote-banner { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+#emote-banner img { width: 48px; height: 48px; transition: transform 0.3s ease; }
+#emote-banner img:nth-child(2) { transform: scale(1.25); }
+#emote-banner img:hover { transform: scale(1.25); }
+#emote-banner img:nth-child(2):hover { transform: scale(1.4); }
+
+/* Sektionen */
+section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background: rgba(10, 10, 15, 0.85);
+  border-radius: 22px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 1s ease-out;
+}
+section.visible { transform: translateY(0); opacity: 1; }
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #fff;
+  border-bottom: 3px solid #9146FF;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Social Media Grid (Neu) */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.social-card i { font-size: 2rem; margin-bottom: 10px; }
+.social-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.1); }
+.twitch:hover { border-color: #9146FF; color: #9146FF; }
+.twitter:hover { border-color: #1DA1F2; color: #1DA1F2; }
+.instagram:hover { border-color: #E1306C; color: #E1306C; }
+
+/* Content Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+.card { background: rgba(255,255,255,0.06); border-radius: 15px; padding: 25px; text-align: center; }
+
+/* Media Elements */
+.vods iframe, .chat-dark { width: 100%; max-width: 900px; border: none; border-radius: 15px; }
+.vods iframe { height: 500px; }
+.chat-dark { height: 600px; background-color: #111; color: #fff; }
+
+/* Footer */
+footer { text-align: center; padding: 40px 20px; background: #111; font-size: 0.9rem; color: #888; margin-top: auto; }
+
+/* Responsivität */
+@media (max-width:900px){
+  header h1{font-size:2.2rem;}
+  header p{font-size:1.1rem;}
+  section{padding:40px 15px; transform:none;}
+  .vods iframe{height:260px;}
+  .chat-dark{height:400px;}
+}
