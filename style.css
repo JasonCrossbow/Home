@@ -21,15 +21,8 @@ header {
   text-shadow: 0 0 15px #9146FF;
 }
 
-header h1 { 
-  font-size: 3rem; 
-  margin-bottom: 10px; 
-}
-
-header p { 
-  font-size: 1.3rem; 
-  margin-bottom: 15px; 
-}
+header h1 { font-size: 3rem; margin-bottom: 10px; }
+header p { font-size: 1.3rem; margin-bottom: 15px; }
 
 .btn {
   padding: 12px 30px;
@@ -55,25 +48,15 @@ header p {
   gap: 20px; 
   margin-top: 25px; 
 }
-
 #emote-banner img { 
   width: 50px; 
   height: 50px; 
   object-fit: contain;
   transition: transform 0.3s ease; 
 }
-
-#emote-banner img:nth-child(2) { 
-  transform: scale(1.25); 
-}
-
-#emote-banner img:hover { 
-  transform: scale(1.2); 
-}
-
-#emote-banner img:nth-child(2):hover { 
-  transform: scale(1.45); 
-}
+#emote-banner img:nth-child(2) { transform: scale(1.25); }
+#emote-banner img:hover { transform: scale(1.2); }
+#emote-banner img:nth-child(2):hover { transform: scale(1.45); }
 
 /* --- SEKTIONEN --- */
 section {
@@ -87,11 +70,7 @@ section {
   opacity: 0;
   transition: transform 0.8s ease-out, opacity 1s ease-out;
 }
-
-section.visible { 
-  transform: translateY(0); 
-  opacity: 1; 
-}
+section.visible { transform: translateY(0); opacity: 1; }
 
 h2 {
   font-size: 2.2rem;
@@ -123,18 +102,11 @@ h2 {
   border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-.social-card i { 
-  font-size: 2.5rem; 
-  margin-bottom: 12px; 
-}
-
-.social-card span {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
+.social-card i { font-size: 2.5rem; margin-bottom: 12px; }
+.social-card span { font-weight: bold; font-size: 1.1rem; }
 
 /* Permanente Farben für Icons & Text */
-.youtube i, .youtube span { color: #FF0000; }
+.discord i, .discord span { color: #5865F2; } /* Discord Blurple */
 .tiktok i, .tiktok span { color: #ff0050; }
 .instagram i, .instagram span { color: #E1306C; }
 
@@ -144,9 +116,9 @@ h2 {
   background: rgba(255, 255, 255, 0.1);
 }
 
-.youtube:hover { 
-  border-color: #FF0000; 
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); 
+.discord:hover { 
+  border-color: #5865F2; 
+  box-shadow: 0 0 20px rgba(88, 101, 242, 0.4); 
 }
 
 .tiktok:hover { 
@@ -159,10 +131,10 @@ h2 {
   box-shadow: 0 0 20px rgba(225, 48, 108, 0.4); 
 }
 
-/* --- TWITCH CONTENT (VOD/LIVE) --- */
+/* --- TWITCH CONTENT --- */
 .video-wrapper {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Format */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 15px;
@@ -170,21 +142,14 @@ h2 {
   max-width: 900px;
   margin: 0 auto;
 }
-
 .video-wrapper iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   border: none;
 }
 
 /* --- CHAT --- */
-#chat { 
-  text-align: center; 
-}
-
+#chat { text-align: center; }
 .chat-dark { 
   width: 100%; 
   max-width: 900px; 
@@ -195,28 +160,11 @@ h2 {
 }
 
 /* --- FOOTER --- */
-footer { 
-  text-align: center; 
-  padding: 40px 20px; 
-  background: #111; 
-  font-size: 0.9rem; 
-  color: #888; 
-  margin-top: auto; 
-}
+footer { text-align: center; padding: 40px 20px; background: #111; font-size: 0.9rem; color: #888; margin-top: auto; }
 
-/* --- MOBILE OPTIMIERUNG --- */
+/* --- MOBILE --- */
 @media (max-width: 900px) {
-  section { 
-    transform: none !important; 
-    opacity: 1 !important; 
-    margin: 20px 10px;
-  }
-  
-  header h1 { 
-    font-size: 2.2rem; 
-  }
-  
-  .chat-dark { 
-    height: 400px; 
-  }
+  section { transform: none !important; opacity: 1 !important; margin: 20px 10px; }
+  header h1 { font-size: 2.2rem; }
+  .chat-dark { height: 400px; }
 }
