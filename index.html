@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason_Crossbow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🎮 Jason_Crossbow</h1>
+    <p id="streamStatus">🔄 Streamstatus wird geladen …</p>
+    <a class="btn" href="https://twitch.tv/Jason_Crossbow" target="_blank">Jetzt Live</a>
+    <div id="emote-banner">
+        <img src="assets/emotes/wave.png" alt="Wave">
+        <img src="assets/emotes/hype.png" alt="Hype">
+        <img src="assets/emotes/popcorn.png" alt="Popcorn">
+    </div>
+</header>
+
+<main>
+    <section id="about">
+        <h2>Über mich</h2>
+        <p>Krass dass Du hergefunden hast!<br> Ich bin ein junger Typ, der gern zockt! :D Ich dachte mir einfach, ich nehme Dich einfach mit auf der Reise durch die verschiedensten Games und entertaine Dich!</p>
+    </section>
+
+    <section id="socials">
+        <h2>Socials</h2>
+        <div class="social-grid">
+            <a href="https://twitch.tv/Jason_Crossbow" target="_blank" class="social-card twitch">
+                <i class="fab fa-twitch"></i>
+                <span>Twitch</span>
+            </a>
+            <a href="https://twitter.com/Jason_Crossbow" target="_blank" class="social-card twitter">
+                <i class="fab fa-x-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            <a href="https://instagram.com/Jason_Crossbow" target="_blank" class="social-card instagram">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="vod">
+        <h2>Neuester VOD</h2>
+        <div class="vods">
+            <iframe id="vodPlayer" src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io" allowfullscreen></iframe>
+            <p id="vodFallback" style="margin-top:15px;color:#888;display:none;">Aktuell kein VOD verfügbar.</p>
+        </div>
+    </section>
+
+    <section id="chat">
+        <h2>Live-Chat</h2>
+        <iframe class="chat-dark" src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout=true"></iframe>
+    </section>
+</main>
+
+<footer>© 2026 Jason_Crossbow</footer>
+
+<script>
+    // Scroll-Animation
+    function handleScroll(){
+        document.querySelectorAll('section').forEach(sec=>{
+            const rect = sec.getBoundingClientRect();
+            if(rect.top < window.innerHeight * 0.85){
+                sec.classList.add('visible');
+            }
+        });
+    }
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleScroll);
+
+    // Twitch Status
+    async function updateLiveStatus(){
+        const statusEl = document.getElementById('streamStatus');
+        try{
+            const res = await fetch('https://decapi.me/twitch/uptime/Jason_Crossbow');
+            const text = await res.text();
+            if(text.toLowerCase().includes('offline')){
+                statusEl.textContent = '⚪ Streamstatus: Offline';
+            } else {
+                statusEl.textContent = '🔴 Streamstatus: LIVE';
+            }
+        } catch(e){
+            statusEl.textContent = '⚠️ Status nicht verfügbar';
+        }
+    }
+    updateLiveStatus();
+    setInterval(updateLiveStatus, 60000);
+</script>
+
+</body>
+</html>
