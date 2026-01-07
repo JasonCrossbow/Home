@@ -168,3 +168,39 @@ footer { text-align: center; padding: 40px 20px; background: #111; font-size: 0.
   header h1 { font-size: 2.2rem; }
   .chat-dark { height: 400px; }
 }
+/* --- BACK TO TOP BUTTON --- */
+.scroll-top {
+    margin-bottom: 20px;
+}
+
+#backToTop {
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#backToTop:hover {
+    color: #fff;
+    background: #9146FF;
+    border-color: #9146FF;
+    box-shadow: 0 0 15px rgba(145, 70, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+#backToTop i {
+    font-size: 0.8rem;
+}
+
+/* Sanftes Scrollen aktivieren */
+html {
+    scroll-behavior: smooth;
+}
