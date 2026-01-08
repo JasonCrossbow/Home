@@ -1,6 +1,6 @@
 /* --- BASIS & LAYOUT --- */
 html {
-    scroll-behavior: smooth; /* Sanftes Scrollen bei Klick auf "Nach oben" */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -45,7 +45,6 @@ header {
     transition: 0.3s; 
 }
 
-/* Emote Banner Bereich */
 #emote-banner { 
     display: flex; 
     justify-content: center; 
@@ -70,7 +69,7 @@ section {
     max-width: 1000px;
     width: 90%;
     margin: 20px auto; 
-    padding: 15px 25px 25px 25px; /* Kompakter Abstand oben für die Titel */
+    padding: 15px 25px 25px 25px; 
     background: rgba(10, 10, 15, 0.9);
     border-radius: 22px;
     box-sizing: border-box;
@@ -86,7 +85,7 @@ h2 {
     padding-bottom: 5px; 
 }
 
-/* --- BENTO DASHBOARD (Top Bereich) --- */
+/* --- BENTO DASHBOARD --- */
 #dashboard { background: transparent; padding: 0; margin-top: 10px; }
 
 .bento-grid { 
@@ -125,7 +124,7 @@ h2 {
 .progress-bar { background: #111; height: 12px; border-radius: 10px; border: 1px solid #333; overflow: hidden; }
 .progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; transition: width 1.5s ease; }
 
-/* --- STREAM HISTORY (NEU) --- */
+/* --- STREAM HISTORY & GLITCH --- */
 .history-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -147,42 +146,34 @@ h2 {
     min-height: 180px;
 }
 
-/* --- INSTANT GAMING STYLE GLITCH --- */
-.ig-glitch-text {
-    position: relative;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    display: inline-block;
-    /* Hier wird der SVG-Filter von oben aufgerufen */
-    filter: url(#ig-glitch); 
-    animation: ig-color-glitch 0.4s infinite;
-}
-
-/* Zusätzliche Farb-Zuckungen (Rot/Blau) */
-@keyframes ig-color-glitch {
-    0% { text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
-    25% { text-shadow: -1px 0 #ff00c1, 1px 0 #00fff9; }
-    50% { text-shadow: 1.5px 0 #ff00c1, -1.5px 0 #00fff9; }
-    75% { text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9; }
-    100% { text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
-}
-
-/* Optional: Damit der Text beim Hover noch krasser zittert */
-.history-card:hover .ig-glitch-text {
-    animation: ig-color-glitch 0.1s infinite;
-}
-
 .history-card:hover {
     background: rgba(145, 70, 255, 0.05);
     border-color: rgba(145, 70, 255, 0.4);
     transform: translateY(-5px);
 }
 
+.ig-glitch-text {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    filter: url(#ig-glitch); 
+    animation: ig-lazy-glitch 6s infinite;
+}
+
+@keyframes ig-lazy-glitch {
+    0% { text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; transform: translateX(0); }
+    5% { text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9; transform: translateX(1px); }
+    10% { text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; transform: translateX(-1px); }
+    15% { text-shadow: -1px 0 #ff00c1, 1px 0 #00fff9; transform: translateX(0); }
+    20% { text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
+    21%, 100% { text-shadow: 0 0 transparent; transform: translateX(0); }
+}
+
 .card-tag {
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
     background: rgba(255, 255, 255, 0.05);
     padding: 4px 10px;
     border-radius: 5px;
@@ -193,10 +184,8 @@ h2 {
 
 .card-tag.highlight { background: #9146FF; color: #fff; }
 .card-icon { font-size: 1.8rem; color: #9146FF; margin-bottom: 15px; display: block; }
-.history-card h3 { margin: 0 0 10px 0; font-size: 1.2rem; color: #fff; }
-.history-card p { margin: 0; font-size: 0.9rem; color: #aaa; line-height: 1.4; }
 
-/* --- SOCIALS (LEUCHTEFFEKTE) --- */
+/* --- SOCIALS --- */
 .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 
 .social-card { 
@@ -250,8 +239,6 @@ footer {
     box-shadow: 0 0 15px rgba(145, 70, 255, 0.4);
     transform: scale(1.05);
 }
-
-footer p { font-size: 0.85rem; color: #555; }
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
