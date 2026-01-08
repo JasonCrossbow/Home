@@ -26,79 +26,77 @@ header { padding: 40px 20px 30px 20px; text-align: center; color: #fff; }
     width: 45px; height: 45px; object-fit: contain; 
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
-#emote-banner img:nth-child(2) { transform: scale(1.3); }
-#emote-banner img:hover { transform: scale(1.8) rotate(5deg) !important; filter: drop-shadow(0 0 10px #9146FF); }
+#emote-banner img:hover { transform: scale(1.8) rotate(5deg); filter: drop-shadow(0 0 10px #9146FF); }
 
-/* --- BENTO DASHBOARD (Optimized Spacing) --- */
+/* --- BENTO DASHBOARD RESTRUCTURING --- */
 .bento-grid { 
-    display: flex; gap: 20px; max-width: 1000px; margin: 0 auto; width: 90%;
+    display: flex; gap: 20px; max-width: 1000px; margin: 0 auto; width: 90%; align-items: stretch;
 }
 
+/* Linke Seite: Aktive Mission */
 .main-info { 
-    flex: 1.8; /* Etwas breiter für die Mission */
-    background: rgba(15, 15, 25, 0.95); 
+    flex: 1.5; background: rgba(15, 15, 25, 0.95); 
     border: 1px solid rgba(145, 70, 255, 0.2); padding: 25px; border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex; flex-direction: column; justify-content: center;
 }
-
 .main-info h2 { 
     font-size: 1.6rem; border-bottom: 3px solid #9146FF; 
     width: fit-content; display: block; margin-bottom: 15px; 
 }
 
-.right-column { flex: 1.2; display: flex; flex-direction: column; gap: 20px; }
+/* Rechte Seite: Vibe oben, Goal unten */
+.right-column { flex: 1; display: flex; flex-direction: column; gap: 20px; }
 
 .bento-item { 
     background: rgba(15, 15, 25, 0.95); border: 1px solid rgba(145, 70, 255, 0.2); 
     padding: 20px; border-radius: 20px; transition: 0.3s;
 }
 
-/* CURRENT VIBE FIX (Icon & Text nebeneinander) */
-.vibe-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
+/* Current Vibe Side-by-Side */
+.vibe-card { display: flex; align-items: center; gap: 15px; }
 .vibe-icon { 
-    font-size: 2.2rem; color: #9146FF; 
+    font-size: 2rem; color: #9146FF; 
     filter: drop-shadow(0 0 8px rgba(145, 70, 255, 0.6)); 
-    margin-bottom: 0; /* Margin entfernt für Side-by-Side */
 }
+.status-label { font-size: 0.8rem; color: #888; text-transform: uppercase; }
+.status-value { font-size: 1.2rem; font-weight: bold; color: #fff; }
 
-.status-value { font-size: 1.3rem; font-weight: bold; color: #fff; }
+/* Follower Goal */
+.goal-text { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.9rem; color: #fff; margin-bottom: 8px; }
+.progress-bar { background: #111; height: 10px; border-radius: 10px; border: 1px solid #333; overflow: hidden; }
+.progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; box-shadow: 0 0 10px rgba(145, 70, 255, 0.5); }
 
-/* FOLLOWER GOAL */
-.goal-text { 
-    display: flex; justify-content: space-between; font-weight: bold; 
-    font-size: 0.95rem; color: #fff; margin-bottom: 10px; 
+/* --- SOCIALS (Wieder normal groß & leuchtend) --- */
+.social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; width: 90%; }
+.social-card { 
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 30px; border-radius: 20px; text-decoration: none; color: #fff; 
+    transition: 0.4s; border: 1px solid rgba(255, 255, 255, 0.05); background: rgba(255,255,255,0.02);
 }
-.progress-bar { background: #111; height: 12px; border-radius: 10px; border: 1px solid #333; overflow: hidden; position: relative; }
-.progress-fill { 
-    background: linear-gradient(90deg, #9146FF, #c194ff); 
-    height: 100%; transition: width 1.5s ease-in-out; 
-    box-shadow: 0 0 10px rgba(145, 70, 255, 0.5);
-}
+.social-card i { font-size: 2.8rem; margin-bottom: 15px; }
+.social-card span { font-weight: bold; font-size: 1.1rem; letter-spacing: 1px; }
 
-/* --- SEKTIONEN --- */
-section:not(#dashboard) {
-    max-width: 1000px; width: 90%; margin: 40px auto; 
-    padding: 25px; background: rgba(10, 10, 15, 0.9);
-    border-radius: 22px; box-sizing: border-box;
-}
-h2 { color: #fff; font-size: 2.2rem; margin-top: 0; border-bottom: 3px solid #9146FF; display: inline-block; padding-bottom: 5px; }
+/* Social Glows */
+.social-card.discord { border-color: rgba(88, 101, 242, 0.2); }
+.social-card.tiktok { border-color: rgba(255, 0, 80, 0.2); }
+.social-card.instagram { border-color: rgba(225, 48, 108, 0.2); }
 
-/* --- CYBERPUNK GLITCH --- */
+.social-card.discord i { color: #5865F2; text-shadow: 0 0 10px rgba(88, 101, 242, 0.5); }
+.social-card.tiktok i { color: #ff0050; text-shadow: 0 0 10px rgba(255, 0, 80, 0.5); }
+.social-card.instagram i { color: #E1306C; text-shadow: 0 0 10px rgba(225, 48, 108, 0.5); }
+
+.social-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); }
+.social-card.discord:hover { border-color: #5865F2; box-shadow: 0 0 25px rgba(88, 101, 242, 0.4); }
+.social-card.tiktok:hover { border-color: #ff0050; box-shadow: 0 0 25px rgba(255, 0, 80, 0.4); }
+.social-card.instagram:hover { border-color: #E1306C; box-shadow: 0 0 25px rgba(225, 48, 108, 0.4); }
+
+/* --- STREAM HISTORY (Cyberpunk Glitch) --- */
 .ig-glitch {
     position: relative; font-size: 1.1rem; font-weight: 400; color: #fcee0a; 
     text-transform: uppercase; letter-spacing: 2px; display: inline-block;
 }
-.ig-glitch::before, .ig-glitch::after {
-    content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-}
+.ig-glitch::before, .ig-glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .ig-glitch::before { left: 2px; text-shadow: -2px 0 #ff00c1; animation: ig-real-glitch 0.8s infinite; }
 .ig-glitch::after { left: -2px; text-shadow: 2px 0 #00fff9; animation: ig-real-glitch 0.8s infinite reverse; }
 
@@ -110,47 +108,8 @@ h2 { color: #fff; font-size: 2.2rem; margin-top: 0; border-bottom: 3px solid #91
   40%, 100% { clip-path: inset(0 0 100% 0); }
 }
 
-/* --- HISTORY & SOCIALS --- */
-.history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.history-card { 
-    background: rgba(20, 20, 30, 0.6); border: 1px solid rgba(145, 70, 255, 0.1);
-    border-radius: 18px; padding: 20px; text-decoration: none; color: inherit;
-    transition: all 0.3s ease; display: flex; flex-direction: column; min-height: 180px;
-}
-.history-card:hover { 
-    background: rgba(145, 70, 255, 0.05); border-color: #9146FF; 
-    transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); 
-}
-
-.social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.social-card { 
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 25px; border-radius: 15px; text-decoration: none; color: #fff; 
-    transition: 0.4s; border: 1px solid rgba(255, 255, 255, 0.05); background: rgba(255,255,255,0.02);
-}
-.social-card.discord { border-color: rgba(88, 101, 242, 0.2); }
-.social-card.tiktok { border-color: rgba(255, 0, 80, 0.2); }
-.social-card.instagram { border-color: rgba(225, 48, 108, 0.2); }
-
-.social-card.discord i { color: #5865F2; text-shadow: 0 0 10px rgba(88, 101, 242, 0.5); }
-.social-card.tiktok i { color: #ff0050; text-shadow: 0 0 10px rgba(255, 0, 80, 0.5); }
-.social-card.instagram i { color: #E1306C; text-shadow: 0 0 10px rgba(225, 48, 108, 0.5); }
-
-.social-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); border-color: #9146FF; }
-
-/* --- CHAT --- */
+/* --- CHAT & FOOTER --- */
 .chat-dark { width: 100%; height: 500px; border-radius: 15px; border: none; background: #0e0e10; }
+footer { text-align: center; padding: 40px; background: #0a0a0f; }
 
-/* --- FOOTER --- */
-footer { text-align: center; padding: 40px; background: #0a0a0f; border-top: 1px solid rgba(145, 70, 255, 0.1); }
-#backToTop { 
-    color: #ccc; text-decoration: none; padding: 12px 25px; border: 1px solid #333; 
-    border-radius: 30px; transition: 0.4s; display: inline-block; background: rgba(255, 255, 255, 0.05); 
-}
-#backToTop:hover { background: #9146FF; color: #fff; transform: scale(1.1); }
-
-/* --- MOBILE --- */
-@media (max-width: 768px) { 
-    .bento-grid { flex-direction: column; }
-    .social-grid, .history-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 768px) { .bento-grid { flex-direction: column; } .social-grid { grid-template-columns: 1fr; } }
