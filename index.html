@@ -3,166 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason_Crossbow</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Jason_Crossbow | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>🎮 Jason_Crossbow</h1>
-    <p id="streamStatus">🔄 Status wird geprüft...</p>
-    <a class="btn" href="https://twitch.tv/Jason_Crossbow" target="_blank">Zum Twitch Kanal</a>
-    <div id="emote-banner">
-        <img src="assets/emotes/wave.png" alt="Wave">
-        <img src="assets/emotes/armbrust holz.png" alt="Armbrust">
-        <img src="assets/emotes/popcorn.png" alt="Popcorn">
-    </div>
-</header>
-
-<main>
-   <section id="dashboard">
-    <div class="bento-grid">
-        <div class="bento-item main-info">
-            <div class="mission-badge">AKTIVE MISSION</div>
-            <h2>Variety & Noob Gaming</h2>
-            <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken. Aktueller Fokus: <span class="highlight-text">Story-Games</span>.</p>
+    <header>
+        <h1>🎮 Jason_Crossbow</h1>
+        <p>Willkommen in der Chaos-Zentrale!</p>
+        <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
+        
+        <div id="emote-banner">
+            <img src="assets/emotes/wave.png" alt="Wave">
+            <img src="assets/emotes/armbrust holz.png" alt="Armbrust">
+            <img src="assets/emotes/popcorn.png" alt="Popcorn">
         </div>
+    </header>
 
-        <div class="bento-item status-box">
-            <div class="status-icon-wrapper">
-                <i class="fas fa-satellite-dish"></i>
-                <div class="pulse-ring"></div>
+    <section id="dashboard">
+        <div class="bento-grid">
+            <div class="bento-item main-info">
+                <div class="mission-badge">AKTIVE MISSION</div>
+                <h2>Variety & Noob Gaming</h2>
+                <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken. Aktueller Fokus: <span class="highlight-text">Story-Games</span>.</p>
             </div>
-            <div class="status-content">
-                <span class="status-label">CURRENT VIBE</span>
-                <span class="status-value">Grind & Chill</span>
+
+            <div class="bento-item status-box">
+                <div class="status-header">
+                    <div class="live-led"></div>
+                    <span class="status-label">Current Vibe</span>
+                </div>
+                <div class="status-main">
+                    <i class="fas fa-bolt vibe-icon"></i>
+                    <span class="status-value">Grind & Chill</span>
+                </div>
+            </div>
+
+            <div class="bento-item goal-box">
+                <div class="goal-text">
+                    <span>Follower Goal: <span id="current-followers">0</span> / 200</span>
+                    <span id="goal-percent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="goal-bar" style="width: 0%;"></div>
+                </div>
             </div>
         </div>
-
-        <div class="bento-item goal-box">
-            <div class="goal-text">
-                <span>Follower Goal: <span id="current-followers">0</span> / 200</span>
-                <span id="goal-percent">0%</span>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" id="goal-bar" style="width: 0%;"></div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <section id="socials">
         <h2>Socials</h2>
         <div class="social-grid">
-            <a href="https://discord.gg/bYAkBEMavP" target="_blank" class="social-card discord">
+            <a href="https://discord.gg/bYAkBEMavP" class="social-card discord" target="_blank">
                 <i class="fab fa-discord"></i>
                 <span>Discord</span>
             </a>
-            <a href="https://tiktok.com/@jason_crossbow" target="_blank" class="social-card tiktok">
+            <a href="https://tiktok.com/@jason_crossbow" class="social-card tiktok" target="_blank">
                 <i class="fab fa-tiktok"></i>
                 <span>TikTok</span>
             </a>
-            <a href="https://instagram.com/Jason_Crossbow" target="_blank" class="social-card instagram">
+            <a href="https://instagram.com/Jason_Crossbow" class="social-card instagram" target="_blank">
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
             </a>
         </div>
     </section>
 
-    <section id="twitch-content">
-        <div id="live-container" style="display: none;">
-            <h2>🔴 LIVE auf Twitch</h2>
-            <div class="video-wrapper">
-                <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div id="vod-container">
-            <h2>Neuester VOD</h2>
-            <div class="video-wrapper">
-                <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io&autoplay=false" allowfullscreen></iframe>
-            </div>
+    <section id="twitch-vod">
+        <h2>Neuester VOD</h2>
+        <div class="video-wrapper">
+            <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io&autoplay=false" allowfullscreen></iframe>
         </div>
     </section>
 
     <section id="chat">
         <h2>Live-Chat</h2>
-        <iframe class="chat-dark" src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout=true"></iframe>
+        <iframe src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" class="chat-dark"></iframe>
     </section>
-</main>
 
-<footer>
-    <div class="scroll-top">
-        <a href="#" id="backToTop"><i class="fas fa-chevron-up"></i> Nach oben</a>
-    </div>
-    <p>© 2026 Jason_Crossbow</p>
-</footer>
+    <footer>
+        <div class="scroll-top">
+            <a href="#" id="backToTop"><i class="fas fa-chevron-up"></i> Nach oben</a>
+        </div>
+        <p>&copy; 2026 Jason_Crossbow</p>
+    </footer>
 
-<script>
-    function handleScroll(){
-        document.querySelectorAll('section').forEach(sec=>{
-            const rect = sec.getBoundingClientRect();
-            if(rect.top < window.innerHeight * 0.85){
-                sec.classList.add('visible');
-            }
-        });
-    }
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('load', handleScroll);
-
-    async function updateTwitchDisplay() {
-        const liveContainer = document.getElementById('live-container');
-        const vodContainer = document.getElementById('vod-container');
-        const statusText = document.getElementById('streamStatus');
-
-        try {
-            const response = await fetch('https://decapi.me/twitch/uptime/Jason_Crossbow');
-            const uptime = await response.text();
-
-            if (uptime.toLowerCase().includes('offline')) {
-                statusText.innerHTML = '⚪ Streamstatus: Offline';
-                liveContainer.style.display = 'none';
-                vodContainer.style.display = 'block';
-            } else {
-                statusText.innerHTML = '🔴 Streamstatus: LIVE';
-                liveContainer.style.display = 'block';
-                vodContainer.style.display = 'none';
-            }
-        } catch (error) {
-            statusText.innerHTML = '⚠️ Status nicht verfügbar';
-        }
-    }
-    updateTwitchDisplay();
-    setInterval(updateTwitchDisplay, 120000);
-
-    async function updateFollowerGoal() {
-    const channelName = 'Jason_Crossbow';
-    const goal = 200; // Hier dein Ziel eintragen
-    
-    try {
-        // Holt die reine Zahl der Follower von DecAPI
-        const response = await fetch(`https://decapi.me/twitch/followcount/${channelName}`);
-        const count = await response.text();
-        const followerCount = parseInt(count);
-
-        if (!isNaN(followerCount)) {
-            // Prozent berechnen (max 100%)
-            const percent = Math.min(Math.round((followerCount / goal) * 100), 100);
-
-            // HTML updaten
-            document.getElementById('current-followers').innerText = followerCount;
-            document.getElementById('goal-percent').innerText = percent + '%';
-            document.getElementById('goal-bar').style.width = percent + '%';
-        }
-    } catch (error) {
-        console.error("Fehler beim Laden der Follower:", error);
-    }
-}
-
-// Beim Laden ausführen und alle 5 Minuten aktualisieren
-updateFollowerGoal();
-setInterval(updateFollowerGoal, 300000);
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
