@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason_Crossbow | Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>🎮 Jason_Crossbow</h1>
-        <span id="live-status">Lade Status...</span>
-        
-        <div class="header-actions">
-            <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
-        </div>
-        
-        <div id="emote-banner">
-            <img src="assets/emotes/wave.png" alt="Wave">
-            <img src="assets/emotes/armbrust holz.png" alt="Armbrust">
-            <img src="assets/emotes/popcorn.png" alt="Popcorn">
-        </div>
-    </header>
+<header>
+    <div id="live-status">Lade Status...</div>
+    <h1>🎮 Jason_Crossbow</h1>
+    <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
+    
+    <div id="emote-banner">
+        <img src="assets/emotes/wave.png" alt="Wave">
+        <img src="assets/emotes/armbrust holz.png" alt="Armbrust">
+        <img src="assets/emotes/popcorn.png" alt="Popcorn">
+    </div>
+</header>
 
-    <section id="dashboard">
+<section id="dashboard">
     <div class="bento-grid">
         <div class="main-info">
             <div class="status-label">Aktive Mission</div>
             <h2>Variety & Noob Gaming</h2>
-            <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken.</p>
+            <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken. Aktueller Fokus: Story-Games.</p>
         </div>
 
         <div class="right-column">
@@ -54,8 +52,9 @@
     </div>
 </section>
 
-    <section id="socials">
-        <h2>Socials</h2>
+<section id="socials">
+    <div class="container">
+        <h2 class="section-title">Socials</h2>
         <div class="social-grid">
             <a href="https://discord.gg/bYAkBEMavP" class="social-card discord" target="_blank">
                 <i class="fab fa-discord"></i>
@@ -70,32 +69,27 @@
                 <span>Instagram</span>
             </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="stream-history">
-    <h2>Stream History</h2>
-    <div class="history-grid">
-        <div class="history-card">
-            <div class="card-tag">Zuletzt gespielt</div>
-                <div class="card-content">
-                    <i class="fas fa-gamepad card-icon"></i>
-                    <h3 class="ig-glitch" data-text="Cyberpunk 2077">Cyberpunk 2077</h3>
-                    <p>Night City unsicher gemacht und (wie immer) alles in Brand gesetzt.</p>
+<section id="history">
+    <div class="container">
+        <h2 class="section-title">Stream History</h2>
+        <div class="history-grid">
+            <div class="history-card">
+                <div class="card-tag">Zuletzt gespielt</div>
+                <i class="fas fa-gamepad card-icon"></i>
+                <h3 class="ig-glitch" data-text="CYBERPUNK 2077">CYBERPUNK 2077</h3>
+                <p>Night City unsicher gemacht und (wie immer) alles in Brand gesetzt.</p>
             </div>
-        </div>
-
-        <a href="https://www.twitch.tv/jason_crossbow/clip/RamshacklePatientOstrichTBTacoRight-yiga5zWs1GvQ1CKt" target="_blank" class="history-card clip-card">
-            <div class="card-tag highlight">Top Clip</div>
-            <div class="card-content">
-                <i class="fas fa-clapperboard card-icon"></i>
+            <a href="#" class="history-card">
+                <div class="card-tag highlight">Top Clip</div>
+                <i class="fas fa-video card-icon"></i>
                 <h3>Epic Jump-Scare</h3>
                 <p>Klick hier, um zu sehen, wie die Spinne mir ins Gesicht springt.</p>
-            </div>
-        </a>
-
-        <div class="history-card schedule-card">
-            <div class="card-tag">Sendeplan</div>
-            <div class="card-content">
+            </a>
+            <div class="history-card">
+                <div class="card-tag">Sendeplan</div>
                 <i class="fas fa-calendar-alt card-icon"></i>
                 <h3>Nächster Stream</h3>
                 <p>Meistens Abends ab 19/20 Uhr. Check Discord für Updates!</p>
@@ -104,31 +98,18 @@
     </div>
 </section>
 
-    <section id="chat">
-        <h2>Live-Chat</h2>
-        <iframe 
-            src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" 
-            class="chat-dark">
-        </iframe>
-    </section>
+<section id="live-chat">
+    <div class="container">
+        <h2 class="section-title">Live-Chat</h2>
+        <iframe src="https://www.twitch.btv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" 
+                class="chat-dark"></iframe>
+    </div>
+</section>
 
-    <footer>
-        <div class="scroll-top">
-            <a href="#" id="backToTop"><i class="fas fa-chevron-up"></i> Nach oben</a>
-        </div>
-        <p>&copy; 2026 Jason_Crossbow</p>
-    </footer>
+<footer>
+    <a href="#" id="backToTop"><i class="fas fa-chevron-up"></i> Nach oben</a>
+    <p>&copy; 2026 Jason_Crossbow</p>
+</footer>
 
-    <script src="script.js"></script>
-    <svg style="display: none;">
-  <defs>
-    <filter id="ig-glitch">
-      <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="0">
-        <animate attributeName="scale" values="0;4;0;10;0;0;0;12;0;0" dur="2s" repeatCount="indefinite" />
-      </feDisplacementMap>
-    </filter>
-  </defs>
-</svg>
 </body>
 </html>
