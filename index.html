@@ -17,7 +17,7 @@
         }
         .container { max-width: 1000px; margin: 0 auto; width: 92%; }
 
-        /* --- HEADER & EMOTES --- */
+        /* --- HEADER --- */
         header { padding: 60px 0 40px; text-align: center; }
         h1 { color: #fff; font-size: 2.5rem; margin: 10px 0; }
         #live-status { font-size: 0.9rem; color: #aaa; text-transform: uppercase; letter-spacing: 2px; }
@@ -37,18 +37,20 @@
 
         /* --- SEKTIONEN DESIGN --- */
         section { 
-            margin-bottom: 50px; padding: 30px; 
+            margin-bottom: 50px; padding: 25px; 
             background: rgba(15, 15, 25, 0.7); 
             border-radius: 22px; border: 1px solid rgba(255, 255, 255, 0.03);
         }
         #dashboard { background: transparent; border: none; padding: 0; }
+        
+        /* Überschriften Fix (Nicht mehr zu tief) */
         .section-title { 
-            color: #fff; font-size: 2rem; margin-bottom: 25px; 
+            color: #fff; font-size: 1.8rem; margin: 0 0 25px 0; 
             border-bottom: 3px solid #9146FF; display: inline-block; padding-bottom: 5px; 
         }
 
-        /* --- BENTO DASHBOARD --- */
-        .bento-grid { display: flex; gap: 20px; }
+        /* --- BENTO DASHBOARD (Gleiche Höhe Fix) --- */
+        .bento-grid { display: flex; gap: 20px; align-items: stretch; }
         .main-info { 
             flex: 1.6; background: rgba(15, 15, 25, 0.95); 
             border: 1px solid rgba(145, 70, 255, 0.3); padding: 30px; border-radius: 20px; 
@@ -56,10 +58,12 @@
         }
         .right-column { flex: 1; display: flex; flex-direction: column; gap: 20px; }
         .bento-item { 
+            flex: 1; /* Sorgt dafür, dass beide Boxen den Platz gleichmäßig füllen */
             background: rgba(15, 15, 25, 0.95); border: 1px solid rgba(145, 70, 255, 0.3); 
-            padding: 22px; border-radius: 20px; 
+            padding: 22px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center;
         }
-        .vibe-card { display: flex; align-items: center; gap: 15px; }
+
+        .vibe-card { flex-direction: row; align-items: center; gap: 15px; }
         .vibe-icon { font-size: 2rem; color: #9146FF; filter: drop-shadow(0 0 8px #9146FF); }
         .status-label { font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: bold; }
         .status-value { font-size: 1.2rem; font-weight: bold; color: #fff; }
@@ -70,23 +74,21 @@
         /* --- SOCIALS GRID --- */
         .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .social-card { 
-            display: flex; flex-direction: column; align-items: center; padding: 35px; 
+            display: flex; flex-direction: column; align-items: center; padding: 30px; 
             background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); 
             border-radius: 18px; text-decoration: none; color: #fff; transition: 0.4s;
         }
-        .social-card i { font-size: 2.8rem; margin-bottom: 12px; }
         .social-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.07); }
+        .social-card i { font-size: 2.8rem; margin-bottom: 12px; }
         
-        /* Korrekte Glow Farben */
         .discord:hover { border-color: #5865F2; box-shadow: 0 0 25px rgba(88, 101, 242, 0.4); }
         .tiktok:hover { border-color: #ff0050; box-shadow: 0 0 25px rgba(255, 0, 80, 0.4); }
         .instagram:hover { border-color: #E1306C; box-shadow: 0 0 25px rgba(225, 48, 108, 0.4); }
-        
         .discord i { color: #5865F2; }
         .tiktok i { color: #ff0050; }
         .instagram i { color: #E1306C; }
 
-        /* --- STREAM HISTORY GRID --- */
+        /* --- STREAM HISTORY & GLITCH --- */
         .history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .history-card { 
             background: rgba(255,255,255,0.02); border: 1px solid rgba(145,70,255,0.1); 
@@ -95,18 +97,23 @@
         .history-card:hover { border-color: #9146FF; transform: translateY(-5px); }
         .card-tag { font-size: 0.7rem; background: #9146FF; color: #fff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
 
-        /* --- CHAT --- */
-        iframe { width: 100%; height: 500px; border: 1px solid rgba(145, 70, 255, 0.2); border-radius: 15px; background: #000; }
-
-        /* --- FOOTER --- */
-        footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-        #backToTop { 
-            color: #888; text-decoration: none; border: 1px solid #333; 
-            padding: 10px 25px; border-radius: 30px; transition: 0.3s; 
+        .ig-glitch { 
+            position: relative; color: #fcee0a; font-weight: bold; text-transform: uppercase; 
+            letter-spacing: 2px; display: inline-block; margin: 0;
         }
-        #backToTop:hover { color: #fff; border-color: #9146FF; background: rgba(145, 70, 255, 0.1); }
+        .ig-glitch::before, .ig-glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .ig-glitch::before { left: 2px; text-shadow: -1px 0 #ff00c1; animation: glitch-1 2s infinite linear alternate-reverse; }
+        .ig-glitch::after { left: -2px; text-shadow: 1px 0 #00fff9; animation: glitch-2 2s infinite linear alternate-reverse; }
 
-        /* --- RESPONSIVE --- */
+        @keyframes glitch-1 { 0% { clip-path: inset(20% 0 30% 0); } 100% { clip-path: inset(10% 0 70% 0); } }
+        @keyframes glitch-2 { 0% { clip-path: inset(40% 0 10% 0); } 100% { clip-path: inset(80% 0 5% 0); } }
+
+        /* --- CHAT & FOOTER --- */
+        iframe { width: 100%; height: 500px; border: 1px solid rgba(145, 70, 255, 0.2); border-radius: 15px; background: #000; }
+        footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        #backToTop { color: #888; text-decoration: none; border: 1px solid #333; padding: 10px 25px; border-radius: 30px; transition: 0.3s; }
+        #backToTop:hover { color: #fff; border-color: #9146FF; }
+
         @media (max-width: 850px) {
             .bento-grid, .social-grid, .history-grid { flex-direction: column; grid-template-columns: 1fr; }
         }
@@ -173,18 +180,18 @@
         <h2 class="section-title">Stream History</h2>
         <div class="history-grid">
             <div class="history-card">
-                <span class="card-tag">Zuletzt gespielt</span>
-                <h3 style="color: #fff;">Cyberpunk 2077</h3>
+                <span class="card-tag">Zuletzt gespielt</span><br>
+                <h3 class="ig-glitch" data-text="Cyberpunk 2077">Cyberpunk 2077</h3>
                 <p>Night City unsicher gemacht und alles in Brand gesetzt.</p>
             </div>
             <a href="https://www.twitch.tv/jason_crossbow/clip/RamshacklePatientOstrichTBTacoRight-yiga5zWs1GvQ1CKt" class="history-card" target="_blank">
                 <span class="card-tag">Top Clip</span>
-                <h3 style="color: #fff;">Epic Jump-Scare</h3>
+                <h3 style="color: #fff; margin: 0;">Epic Jump-Scare</h3>
                 <p>Klick hier für den Clip!</p>
             </a>
             <div class="history-card">
                 <span class="card-tag">Sendeplan</span>
-                <h3 style="color: #fff;">Nächster Stream</h3>
+                <h3 style="color: #fff; margin: 0;">Nächster Stream</h3>
                 <p>Meistens Abends ab 19/20 Uhr.</p>
             </div>
         </div>
