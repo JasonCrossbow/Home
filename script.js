@@ -1,27 +1,36 @@
-// Follower laden
-async function updateFollowerGoal() {
-    try {
-        const response = await fetch(`https://decapi.me/twitch/followcount/jason_crossbow`);
-        const count = await response.text();
-        const followerCount = parseInt(count.trim());
-        const goal = 200;
+const channelName = "Jason_Crossbow";
 
-        if (!isNaN(followerCount)) {
-            const percent = Math.min(Math.round((followerCount / goal) * 100), 100);
-            document.getElementById('current-followers').innerText = followerCount;
-            document.getElementById('goal-percent').innerText = percent + '%';
-            document.getElementById('goal-bar').style.width = percent + '%';
+async function checkTwitchStatus() {
+    const statusElement = document.getElementById('live-status');
+    try {
+        const response = await fetch(`https://decapi.me/twitch/uptime/${channelName}`);
+        const uptime = await response.text();
+
+        if (uptime.includes("offline")) {
+            statusElement.innerText = "Aktuell Offline";
+            statusElement.classList.remove('status-online');
+        } else {
+            statusElement.innerText = `LIVE - Seit ${uptime} online!`;
+            statusElement.classList.add('status-online');
         }
-    } catch (e) { console.log("API Fehler"); }
+    } catch (e) {
+        statusElement.innerText = "Schön, dass du da bist!";
+    }
 }
 
-// Sektionen einblenden beim Scrollen
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-}, { threshold: 0.1 });
+async function updateFollowers() {
+    try {
+        const res = await fetch(`https://decapi.me/twitch/followcount/${channelName}`);
+        const count = await res.text();
+        const goal = 200;
+        const percent = Math.min(Math.round((parseInt(count) / goal) * 100), 100);
+        
+        document.getElementById('current-followers').innerText = count;
+        document.getElementById('goal-percent').innerText = percent + "%";
+        document.getElementById('goal-bar').style.width = percent + "%";
+    } catch (e) { console.log("Follower API Error"); }
+}
 
-document.querySelectorAll('section').forEach(s => observer.observe(s));
-
-updateFollowerGoal();
+checkTwitchStatus();
+updateFollowers();
+setInterval(checkTwitchStatus, 60000); // Alle 60 Sek prüfen
