@@ -126,6 +126,34 @@
     }
     updateTwitchDisplay();
     setInterval(updateTwitchDisplay, 120000);
+
+    async function updateFollowerGoal() {
+    const channelName = 'Jason_Crossbow';
+    const goal = 200; // Hier dein Ziel eintragen
+    
+    try {
+        // Holt die reine Zahl der Follower von DecAPI
+        const response = await fetch(`https://decapi.me/twitch/followcount/${channelName}`);
+        const count = await response.text();
+        const followerCount = parseInt(count);
+
+        if (!isNaN(followerCount)) {
+            // Prozent berechnen (max 100%)
+            const percent = Math.min(Math.round((followerCount / goal) * 100), 100);
+
+            // HTML updaten
+            document.getElementById('current-followers').innerText = followerCount;
+            document.getElementById('goal-percent').innerText = percent + '%';
+            document.getElementById('goal-bar').style.width = percent + '%';
+        }
+    } catch (error) {
+        console.error("Fehler beim Laden der Follower:", error);
+    }
+}
+
+// Beim Laden ausführen und alle 5 Minuten aktualisieren
+updateFollowerGoal();
+setInterval(updateFollowerGoal, 300000);
 </script>
 </body>
 </html>
