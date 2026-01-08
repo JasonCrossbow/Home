@@ -112,11 +112,13 @@ h2 {
     margin-bottom: 50px; /* Mehr Platz nach unten zu den Socials */
 }
 
-.main-info {
-    grid-row: span 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Zentriert den Inhalt vertikal */
+/* Fix für die Überschrift in der linken Kachel */
+.main-info h2 {
+    border-bottom: 3px solid #9146FF;
+    display: inline-block; /* Sorgt dafür, dass die Linie nur so lang wie der Text ist */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    width: auto; /* Verhindert volle Breite */
 }
 
 /* Damit die rechten Boxen immer gleich groß sind */
