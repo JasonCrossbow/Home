@@ -29,7 +29,7 @@ header { padding: 40px 20px 30px 20px; text-align: center; color: #fff; }
 #emote-banner img:nth-child(2) { transform: scale(1.3); }
 #emote-banner img:hover { transform: scale(1.8) rotate(5deg) !important; filter: drop-shadow(0 0 10px #9146FF); }
 
-/* --- BENTO DASHBOARD (Equal Height & Fixes) --- */
+/* --- BENTO DASHBOARD --- */
 .bento-grid { 
     display: flex; gap: 20px; max-width: 1000px; margin: 0 auto; width: 90%;
 }
@@ -38,7 +38,6 @@ header { padding: 40px 20px 30px 20px; text-align: center; color: #fff; }
     border: 1px solid rgba(145, 70, 255, 0.2); padding: 25px; border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-/* Unterstrich Fix für Aktive Mission */
 .main-info h2 { 
     font-size: 1.8rem; border-bottom: 3px solid #9146FF; 
     width: fit-content; display: block; margin-bottom: 20px; 
@@ -50,14 +49,12 @@ header { padding: 40px 20px 30px 20px; text-align: center; color: #fff; }
     padding: 25px; border-radius: 20px; transition: 0.3s;
 }
 
-/* Current Vibe Icon Fix */
 .vibe-icon { 
     font-size: 2.5rem; color: #9146FF; display: block; 
     margin-bottom: 10px; filter: drop-shadow(0 0 8px rgba(145, 70, 255, 0.6)); 
 }
 .status-value { font-size: 1.4rem; font-weight: bold; color: #fff; }
 
-/* Follower Goal Fix */
 .goal-text { 
     display: flex; justify-content: space-between; font-weight: bold; 
     font-size: 0.95rem; color: #fff; margin-bottom: 10px; 
@@ -96,7 +93,7 @@ h2 { color: #fff; font-size: 2.2rem; margin-top: 0; border-bottom: 3px solid #91
   40%, 100% { clip-path: inset(0 0 100% 0); }
 }
 
-/* --- HISTORY & SOCIAL HOVER --- */
+/* --- HISTORY --- */
 .history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .history-card { 
     background: rgba(20, 20, 30, 0.6); border: 1px solid rgba(145, 70, 255, 0.1);
@@ -108,21 +105,45 @@ h2 { color: #fff; font-size: 2.2rem; margin-top: 0; border-bottom: 3px solid #91
     transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); 
 }
 
+/* --- SOCIALS (NAME UNTER ICON) --- */
 .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 .social-card { 
-    padding: 25px; background: rgba(255,255,255,0.03); border-radius: 15px; 
-    text-align: center; text-decoration: none; color: #fff; transition: 0.4s; 
+    display: flex;
+    flex-direction: column; /* Stapelt Icon und Text übereinander */
+    align-items: center;
+    justify-content: center;
+    padding: 25px; 
+    background: rgba(255,255,255,0.03); 
+    border-radius: 15px; 
+    text-decoration: none; 
+    color: #fff; 
+    transition: 0.4s; 
     border: 1px solid rgba(255, 255, 255, 0.05); 
 }
-.social-card.discord i { color: #5865F2; font-size: 2.2rem; }
-.social-card.tiktok i { color: #ff0050; font-size: 2.2rem; }
-.social-card.instagram i { color: #E1306C; font-size: 2.2rem; }
-.social-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); border-color: #9146FF; }
+.social-card i { 
+    font-size: 2.5rem; /* Icon etwas vergrößert */
+    margin-bottom: 12px; /* Abstand zum Namen darunter */
+}
+.social-card span {
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.social-card.discord i { color: #5865F2; }
+.social-card.tiktok i { color: #ff0050; }
+.social-card.instagram i { color: #E1306C; }
 
-/* --- CHAT --- */
+.social-card:hover { 
+    transform: translateY(-10px); 
+    background: rgba(255, 255, 255, 0.08); 
+    border-color: #9146FF; 
+}
+.social-card.discord:hover { box-shadow: 0 0 20px rgba(88, 101, 242, 0.3); }
+.social-card.tiktok:hover { box-shadow: 0 0 20px rgba(255, 0, 80, 0.3); }
+.social-card.instagram:hover { box-shadow: 0 0 20px rgba(225, 48, 108, 0.3); }
+
+/* --- CHAT & FOOTER --- */
 .chat-dark { width: 100%; height: 500px; border-radius: 15px; border: none; background: #0e0e10; }
-
-/* --- FOOTER --- */
 footer { text-align: center; padding: 40px; background: #0a0a0f; border-top: 1px solid rgba(145, 70, 255, 0.1); }
 #backToTop { 
     color: #ccc; text-decoration: none; padding: 12px 25px; border: 1px solid #333; 
