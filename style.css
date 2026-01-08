@@ -6,6 +6,9 @@ body {
     background-color: #050507;
     background-image: radial-gradient(circle at top, rgba(145,70,255,0.15), transparent 55%);
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header { padding: 60px 20px; text-align: center; color: #fff; }
@@ -21,6 +24,7 @@ header { padding: 60px 20px; text-align: center; color: #fff; }
 /* --- SEKTIONEN --- */
 section {
     max-width: 1000px;
+    width: 90%;
     margin: 40px auto;
     padding: 30px;
     background: rgba(10, 10, 15, 0.9);
@@ -28,12 +32,13 @@ section {
     opacity: 0;
     transform: translateY(20px);
     transition: 0.8s ease-out;
+    box-sizing: border-box; /* Wichtig für die Breite */
 }
 section.visible { opacity: 1; transform: translateY(0); }
 h2 { color: #fff; margin-bottom: 25px; border-bottom: 3px solid #9146FF; display: inline-block; padding-bottom: 5px; }
 
 /* --- BENTO DASHBOARD --- */
-#dashboard { background: transparent; box-shadow: none; margin-top: -20px; margin-bottom: 80px; padding: 0; }
+#dashboard { background: transparent; box-shadow: none; margin-top: -20px; margin-bottom: 80px; padding: 0; opacity: 1; transform: none; }
 .bento-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; }
 .bento-item { background: rgba(15, 15, 25, 0.95); border: 1px solid rgba(145, 70, 255, 0.2); padding: 25px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; }
 
@@ -48,14 +53,8 @@ h2 { color: #fff; margin-bottom: 25px; border-bottom: 3px solid #9146FF; display
 .progress-bar { background: #111; height: 14px; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
 .progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; transition: width 1.5s ease; }
 
-/* --- SOCIALS MIT FARBIGEM LEUCHTEN --- */
-.social-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 15px; 
-    margin-top: 10px;
-}
-
+/* --- SOCIALS MIT FIX FÜR INSTAGRAM --- */
+.social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 10px; }
 .social-card { 
     padding: 25px; 
     background: rgba(255,255,255,0.05); 
@@ -69,11 +68,52 @@ h2 { color: #fff; margin-bottom: 25px; border-bottom: 3px solid #9146FF; display
     flex-direction: column;
     align-items: center;
 }
-
-.social-card i { font-size: 2.2rem; display: block; margin-bottom: 10px; transition: transform 0.3s ease; }
+.social-card i { font-size: 2.2rem; display: block; margin-bottom: 10px; }
 
 .social-card.discord i { color: #5865F2; }
 .social-card.discord:hover { border-color: #5865F2; background: rgba(88, 101, 242, 0.15); box-shadow: 0 0 20px rgba(88, 101, 242, 0.4); transform: translateY(-5px); }
 
 .social-card.tiktok i { color: #ff0050; }
-.social-card.tiktok:hover { border-color: #ff0050; background: rgba(255, 0, 80, 0.15); box-shadow: 0 0 20px rgba(255, 0, 80
+.social-card.tiktok:hover { border-color: #ff0050; background: rgba(255, 0, 80, 0.15); box-shadow: 0 0 20px rgba(255, 0, 80, 0.4); transform: translateY(-5px); }
+
+.social-card.instagram i { color: #E1306C; }
+.social-card.instagram:hover { border-color: #E1306C; background: rgba(225, 48, 108, 0.15); box-shadow: 0 0 20px rgba(225, 48, 108, 0.4); transform: translateY(-5px); }
+
+/* --- VIDEO, CHAT & FOOTER FIX --- */
+.video-wrapper { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    border-radius: 15px; 
+    width: 100%;
+}
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+.chat-dark { 
+    width: 100%; 
+    height: 500px; 
+    border-radius: 15px; 
+    border: none; 
+    display: block;
+    background: #0e0e10;
+}
+
+footer { 
+    text-align: center; 
+    padding: 60px 20px; 
+    background: #0a0a0f; 
+    margin-top: auto; 
+    width: 100%;
+    box-sizing: border-box;
+}
+#backToTop { color: #888; text-decoration: none; padding: 10px 20px; border: 1px solid #333; border-radius: 30px; transition: 0.3s; display: inline-block; margin-bottom: 15px; }
+#backToTop:hover { background: #9146FF; color: #fff; border-color: #9146FF; }
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .bento-grid { grid-template-columns: 1fr; }
+    .social-grid { grid-template-columns: 1fr; }
+    section { padding: 20px; margin: 20px auto; width: 95%; }
+    .chat-dark { height: 400px; }
+}
