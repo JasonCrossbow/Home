@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason_Crossbow | Home</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <header>
-    <div id="live-status">Lade Status...</div>
+    <div id="live-status">Aktuell Offline</div>
     <h1>🎮 Jason_Crossbow</h1>
     <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
     
@@ -22,38 +21,40 @@
     </div>
 </header>
 
-<section id="dashboard">
-    <div class="bento-grid">
-        <div class="main-info">
-            <div class="status-label">Aktive Mission</div>
-            <h2>Variety & Noob Gaming</h2>
-            <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken. Aktueller Fokus: Story-Games.</p>
-        </div>
+<main class="container">
+    <section id="dashboard">
+        <div class="bento-grid">
+            <div class="main-info">
+                <span class="status-label">AKTIVE MISSION</span>
+                <h2>Variety & Noob Gaming</h2>
+                <div class="divider"></div>
+                <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken. Aktueller Fokus: Story-Games.</p>
+            </div>
 
-        <div class="right-column">
-            <div class="bento-item vibe-card">
-                <i class="fas fa-fire vibe-icon"></i>
-                <div>
-                    <div class="status-label">Current Vibe</div>
-                    <div class="status-value">Grind & Chill</div>
+            <div class="right-column">
+                <div class="bento-item vibe-card">
+                    <i class="fas fa-fire vibe-icon"></i>
+                    <div>
+                        <span class="status-label">Current Vibe</span>
+                        <div class="status-value">Grind & Chill</div>
+                    </div>
+                </div>
+
+                <div class="bento-item">
+                    <span class="status-label">Follower Goal: 166 / 200</span>
+                    <div class="goal-text">
+                        <span>Community Love</span>
+                        <span>83%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 83%;"></div>
+                    </div>
                 </div>
             </div>
-            <div class="bento-item">
-                <div class="status-label">Follower Goal</div>
-                <div class="goal-text">
-                    <span>Community Love</span>
-                    <span>83%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 83%;"></div>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="socials">
-    <div class="container">
+    <section id="socials">
         <h2 class="section-title">Socials</h2>
         <div class="social-grid">
             <a href="https://discord.gg/bYAkBEMavP" class="social-card discord" target="_blank">
@@ -69,42 +70,38 @@
                 <span>Instagram</span>
             </a>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="history">
-    <div class="container">
+    <section id="history">
         <h2 class="section-title">Stream History</h2>
         <div class="history-grid">
             <div class="history-card">
-                <div class="card-tag">Zuletzt gespielt</div>
+                <span class="card-tag">ZULETZT GESPIELT</span>
                 <i class="fas fa-gamepad card-icon"></i>
                 <h3 class="ig-glitch" data-text="CYBERPUNK 2077">CYBERPUNK 2077</h3>
                 <p>Night City unsicher gemacht und (wie immer) alles in Brand gesetzt.</p>
             </div>
-            <a href="#" class="history-card">
-                <div class="card-tag highlight">Top Clip</div>
+            <a href="https://www.twitch.tv/jason_crossbow/clip/RamshacklePatientOstrichTBTacoRight-yiga5zWs1GvQ1CKt" class="history-card" target="_blank">
+                <span class="card-tag highlight">TOP CLIP</span>
                 <i class="fas fa-video card-icon"></i>
                 <h3>Epic Jump-Scare</h3>
                 <p>Klick hier, um zu sehen, wie die Spinne mir ins Gesicht springt.</p>
             </a>
             <div class="history-card">
-                <div class="card-tag">Sendeplan</div>
+                <span class="card-tag">SENDEPLAN</span>
                 <i class="fas fa-calendar-alt card-icon"></i>
                 <h3>Nächster Stream</h3>
                 <p>Meistens Abends ab 19/20 Uhr. Check Discord für Updates!</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="live-chat">
-    <div class="container">
+    <section id="live-chat">
         <h2 class="section-title">Live-Chat</h2>
-        <iframe src="https://www.twitch.btv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" 
-                class="chat-dark"></iframe>
-    </div>
-</section>
+        <iframe src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" 
+                class="chat-iframe"></iframe>
+    </section>
+</main>
 
 <footer>
     <a href="#" id="backToTop"><i class="fas fa-chevron-up"></i> Nach oben</a>
