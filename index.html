@@ -11,8 +11,11 @@
 
     <header>
         <h1>🎮 Jason_Crossbow</h1>
-    <span id="live-status">Lade Status...</span> <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
-    </header>
+        <span id="live-status">Lade Status...</span>
+        
+        <div class="header-actions">
+            <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
+        </div>
         
         <div id="emote-banner">
             <img src="assets/emotes/wave.png" alt="Wave">
@@ -29,24 +32,23 @@
                 <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken. Aktueller Fokus: Story-Games.</p>
             </div>
 
-            <div class="bento-item status-box">
-                <div class="status-header">
-                    <div class="live-led"></div>
+            <div class="right-column">
+                <div class="bento-item status-box">
                     <span class="status-label">Current Vibe</span>
+                    <div class="status-main">
+                        <i class="fas fa-bolt vibe-icon"></i>
+                        <span class="status-value">Grind & Chill</span>
+                    </div>
                 </div>
-                <div class="status-main">
-                    <i class="fas fa-bolt vibe-icon"></i>
-                    <span class="status-value">Grind & Chill</span>
-                </div>
-            </div>
 
-            <div class="bento-item goal-box">
-                <div class="goal-text">
-                    <span>Follower Goal: <span id="current-followers">0</span> / 200</span>
-                    <span id="goal-percent">0%</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="goal-bar" style="width: 0%;"></div>
+                <div class="bento-item goal-box">
+                    <div class="goal-text">
+                        <span>Follower Goal: <span id="current-followers">0</span> / 200</span>
+                        <span id="goal-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="goal-bar" style="width: 0%;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,13 +75,19 @@
     <section id="twitch-vod">
         <h2>Neuester VOD</h2>
         <div class="video-wrapper">
-            <iframe src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io&autoplay=false" allowfullscreen></iframe>
+            <iframe 
+                src="https://player.twitch.tv/?channel=Jason_Crossbow&parent=jasoncrossbow.github.io&autoplay=false" 
+                allowfullscreen>
+            </iframe>
         </div>
     </section>
 
     <section id="chat">
         <h2>Live-Chat</h2>
-        <iframe src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" class="chat-dark"></iframe>
+        <iframe 
+            src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" 
+            class="chat-dark">
+        </iframe>
     </section>
 
     <footer>
