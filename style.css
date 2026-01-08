@@ -1,4 +1,4 @@
-/* --- BASIS --- */
+/* --- BASIS & LAYOUT --- */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -38,7 +38,42 @@ h2 { color: #fff; margin-bottom: 25px; border-bottom: 3px solid #9146FF; display
 .bento-item { background: rgba(15, 15, 25, 0.95); border: 1px solid rgba(145, 70, 255, 0.2); padding: 25px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; }
 
 @media (min-width: 769px) { .main-info { grid-row: span 2; border-left: 4px solid #9146FF; } }
-
 .main-info h2 { font-size: 1.8rem; border-bottom: 3px solid #9146FF; display: inline-block; width: auto; margin-bottom: 15px; }
+
 .mission-badge { background: #9146FF; color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 0.75rem; width: fit-content; margin-bottom: 15px; }
-.live-led { width: 10px; height: 10px; background: #9146FF; border-radius: 50
+.live-led { width: 10px; height: 10px; background: #9146FF; border-radius: 50%; animation: blink 1.5s infinite; margin-right: 10px; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.goal-text { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.95rem; color: #fff; margin-bottom: 10px; }
+.progress-bar { background: #111; height: 14px; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
+.progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; transition: width 1.5s ease; }
+
+/* --- SOCIALS MIT FARBIGEM LEUCHTEN --- */
+.social-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    margin-top: 10px;
+}
+
+.social-card { 
+    padding: 25px; 
+    background: rgba(255,255,255,0.05); 
+    border-radius: 15px; 
+    text-align: center; 
+    text-decoration: none; 
+    color: #fff; 
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-card i { font-size: 2.2rem; display: block; margin-bottom: 10px; transition: transform 0.3s ease; }
+
+.social-card.discord i { color: #5865F2; }
+.social-card.discord:hover { border-color: #5865F2; background: rgba(88, 101, 242, 0.15); box-shadow: 0 0 20px rgba(88, 101, 242, 0.4); transform: translateY(-5px); }
+
+.social-card.tiktok i { color: #ff0050; }
+.social-card.tiktok:hover { border-color: #ff0050; background: rgba(255, 0, 80, 0.15); box-shadow: 0 0 20px rgba(255, 0, 80
