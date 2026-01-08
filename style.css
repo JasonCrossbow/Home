@@ -1,4 +1,4 @@
-/* --- BASIS & HEADER --- */
+/* --- BASIS & LAYOUT --- */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -6,6 +6,9 @@ body {
     background-color: #050507;
     background-image: radial-gradient(circle at top, rgba(145,70,255,0.15), transparent 55%);
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header { padding: 30px 20px; text-align: center; color: #fff; }
@@ -24,45 +27,44 @@ header { padding: 30px 20px; text-align: center; color: #fff; }
     transition: 0.3s; 
 }
 
-/* Lücke zwischen Button und Emotes geschlossen */
 #emote-banner { 
     display: flex; 
     justify-content: center; 
     align-items: center; 
     gap: 20px; 
-    margin-top: 15px; /* Minimaler Abstand zum Button */
+    margin-top: 15px; 
     height: 60px; 
 }
 #emote-banner img { width: 40px; height: 40px; object-fit: contain; transition: transform 0.3s ease; }
 #emote-banner img:nth-child(2) { transform: scale(1.3); }
 #emote-banner img:hover { transform: scale(1.5) !important; }
 
-/* --- SEKTIONEN --- */
+/* --- SEKTIONEN (ABSTÄNDE FIX) --- */
 section {
     max-width: 1000px;
     width: 90%;
     margin: 20px auto; 
-    padding: 25px;     
+    padding: 15px 25px 25px 25px; /* Oben stark reduziert (15px statt 25px) */
     background: rgba(10, 10, 15, 0.9);
     border-radius: 22px;
     box-sizing: border-box;
 }
 
-/* Größere Überschriften */
 h2 { 
     color: #fff; 
     font-size: 2.2rem; 
+    margin-top: 0; /* Verhindert extra Platz über der Überschrift */
     margin-bottom: 20px; 
     border-bottom: 3px solid #9146FF; 
     display: inline-block; 
     padding-bottom: 5px; 
 }
 
-/* --- BENTO DASHBOARD (NEBENEINANDER) --- */
+/* --- BENTO DASHBOARD --- */
 #dashboard { background: transparent; padding: 0; margin-top: 10px; }
 .bento-grid { 
     display: grid; 
-    grid-template-columns: 1.5fr 1fr; /* Links groß, Rechts klein */
+    grid-template-columns: 1.5fr 1fr; 
     gap: 20px; 
 }
 
@@ -73,7 +75,6 @@ h2 {
     border-radius: 20px; 
 }
 
-/* Linke Kachel Fix (Linie nur so lang wie Text) */
 .main-info h2 { 
     font-size: 1.8rem; 
     display: inline-block;
@@ -82,7 +83,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Rechte Spalte (Vibe & Follower untereinander) */
 .right-column {
     display: flex;
     flex-direction: column;
@@ -98,7 +98,7 @@ h2 {
 .progress-bar { background: #111; height: 12px; border-radius: 10px; border: 1px solid #333; overflow: hidden; }
 .progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; transition: width 1.5s ease; }
 
-/* --- SOCIALS (ICON FARBEN) --- */
+/* --- SOCIALS --- */
 .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 .social-card { 
     padding: 25px; 
@@ -111,7 +111,6 @@ h2 {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Farben der Icons */
 .discord i { color: #5865F2; font-size: 2.2rem; display: block; margin-bottom: 10px; }
 .tiktok i { color: #ff0050; font-size: 2.2rem; display: block; margin-bottom: 10px; }
 .instagram i { color: #E1306C; font-size: 2.2rem; display: block; margin-bottom: 10px; }
@@ -121,14 +120,43 @@ h2 {
 .social-card.tiktok:hover { border-color: #ff0050; box-shadow: 0 0 15px rgba(255, 0, 80, 0.3); }
 .social-card.instagram:hover { border-color: #E1306C; box-shadow: 0 0 15px rgba(225, 48, 108, 0.3); }
 
-/* --- TWITCH & CHAT FIX --- */
+/* --- TWITCH & CHAT --- */
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; width: 100%; }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 .chat-dark { width: 100%; height: 500px; border-radius: 15px; border: none; background: #0e0e10; }
 
-footer { text-align: center; padding: 20px; background: #0a0a0f; margin-top: 30px; }
+/* --- FOOTER (BUTTON FIX) --- */
+footer { 
+    text-align: center; 
+    padding: 30px 20px; 
+    background: #0a0a0f; 
+    margin-top: 30px; 
+    border-top: 1px solid rgba(145, 70, 255, 0.1);
+}
+
+#backToTop { 
+    color: #ccc; 
+    text-decoration: none; 
+    padding: 10px 25px; 
+    border: 1px solid #333; 
+    border-radius: 30px; 
+    transition: 0.3s; 
+    display: inline-block; /* Macht den Button klickbar und formstabil */
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#backToTop:hover { 
+    background: #9146FF; 
+    color: #fff; 
+    border-color: #9146FF; 
+    box-shadow: 0 0 15px rgba(145, 70, 255, 0.4);
+}
+
+footer p { font-size: 0.85rem; color: #555; }
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
     .bento-grid, .social-grid { grid-template-columns: 1fr; }
+    h2 { font-size: 1.8rem; }
 }
