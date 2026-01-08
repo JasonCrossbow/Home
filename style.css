@@ -128,30 +128,75 @@ h2 {
 }
 
 /* Große Kachel links */
-.main-info {
-    grid-row: span 2;
-    border-left: 4px solid #9146FF;
+/* Mission Kachel */
+
+.mission-badge {
+    background: #9146FF;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 5px;
+    width: fit-content;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
-.main-info h2 {
-    border-bottom: none;
-    margin-bottom: 10px;
-    font-size: 1.8rem;
+.highlight-text {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(145, 70, 255, 0.8);
+    font-weight: bold;
 }
 
-/* Status Kachel oben rechts */
-.status-box {
+/* Status Kachel */
+.status-icon-wrapper {
+    position: relative;
     display: flex;
-    flex-direction: row !important;
     align-items: center;
-    gap: 15px;
-    background: rgba(145, 70, 255, 0.1);
+    justify-content: center;
+    width: 50px;
+    height: 50px;
 }
 
-.status-box i {
-    font-size: 1.5rem;
+.status-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-label {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-value {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* Der pulsierende Ring um das Icon */
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #9146FF;
+    border-radius: 50%;
+    animation: ripple 2s infinite;
+    opacity: 0;
+}
+
+@keyframes ripple {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Hover Effekt für die Kacheln */
+.bento-item:hover .mission-badge {
+    background: #fff;
     color: #9146FF;
-    animation: pulse-icon 2s infinite;
+    transition: 0.3s;
 }
 
 /* Goal Kachel unten rechts */
