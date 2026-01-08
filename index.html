@@ -79,7 +79,7 @@
             <div class="card-tag">Zuletzt gespielt</div>
             <div class="card-content">
                 <i class="fas fa-gamepad card-icon"></i>
-                <h3 class="glitch" data-text="Cyberpunk 2077">Cyberpunk 2077</h3>
+                <h3 class="ig-glitch-text">Cyberpunk 2077</h3>
                 <p>Night City unsicher gemacht und (wie immer) alles in Brand gesetzt.</p>
             </div>
         </div>
@@ -120,5 +120,15 @@
     </footer>
 
     <script src="script.js"></script>
+    <svg style="display: none;">
+  <defs>
+    <filter id="ig-glitch">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="0">
+        <animate attributeName="scale" values="0;8;0;15;2;0;10;0" dur="0.5s" repeatCount="indefinite" />
+      </feDisplacementMap>
+    </filter>
+  </defs>
+</svg>
 </body>
 </html>
