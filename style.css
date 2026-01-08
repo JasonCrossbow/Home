@@ -304,9 +304,30 @@ footer { text-align: center; padding: 40px 20px; background: #111; font-size: 0.
 /* --- MOBILE & SMOOTH SCROLL --- */
 html { scroll-behavior: smooth; }
 
+/* --- MOBILE FIX FÜR BENTO DASHBOARD --- */
 @media (max-width: 768px) {
+    .bento-grid {
+        /* Erzwingt eine einzige Spalte am Handy */
+        grid-template-columns: 1fr !important; 
+        grid-auto-rows: auto !important;
+        gap: 15px !important;
+    }
+
+    .main-info {
+        /* Hebt die Zwei-Zeilen-Regelung am Handy auf */
+        grid-row: auto !important; 
+    }
+
     #dashboard {
-        margin-top: 20px;    /* Am Handy wieder normaler Abstand */
-        margin-bottom: 40px; /* Am Handy kompakter */
+        /* Korrigiert die Abstände für Mobile */
+        margin-top: 10px !important;
+        margin-bottom: 30px !important;
+        padding: 0 10px !important;
+    }
+
+    .status-box, .goal-box {
+        /* Stellt sicher, dass die Boxen am Handy nicht zu schmal sind */
+        grid-column: auto !important;
+        grid-row: auto !important;
     }
 }
