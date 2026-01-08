@@ -39,37 +39,6 @@ h2 { color: #fff; margin-bottom: 25px; border-bottom: 3px solid #9146FF; display
 
 @media (min-width: 769px) { .main-info { grid-row: span 2; border-left: 4px solid #9146FF; } }
 
-/* Fix für kurze Linie unter h2 in Kacheln */
 .main-info h2 { font-size: 1.8rem; border-bottom: 3px solid #9146FF; display: inline-block; width: auto; margin-bottom: 15px; }
-
 .mission-badge { background: #9146FF; color: #fff; padding: 4px 10px; border-radius: 5px; font-size: 0.75rem; width: fit-content; margin-bottom: 15px; }
-.live-led { width: 10px; height: 10px; background: #9146FF; border-radius: 50%; animation: blink 1.5s infinite; margin-right: 10px; }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-.status-header { display: flex; align-items: center; margin-bottom: 10px; }
-.status-value { font-size: 1.4rem; font-weight: bold; color: #fff; }
-
-/* Follower Text Fix */
-.goal-text { display: flex; justify-content: space-between; font-weight: bold; font-size: 0.95rem; color: #fff; margin-bottom: 10px; }
-#goal-percent { color: #9146FF; font-weight: 800; }
-.progress-bar { background: #111; height: 14px; border-radius: 10px; overflow: hidden; border: 1px solid #333; }
-.progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; transition: width 1.5s ease; }
-
-/* --- SOCIALS --- */
-.social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-.social-card { padding: 25px; background: rgba(255,255,255,0.05); border-radius: 15px; text-align: center; text-decoration: none; color: #fff; transition: 0.3s; }
-.social-card:hover { border-color: #9146FF; background: rgba(145,70,255,0.1); transform: translateY(-5px); }
-.social-card i { font-size: 2.2rem; display: block; margin-bottom: 10px; }
-
-/* --- MOBILE --- */
-@media (max-width: 768px) {
-    .bento-grid { grid-template-columns: 1fr; }
-    .main-info { border-top: 4px solid #9146FF; }
-    .social-grid { grid-template-columns: 1fr; }
-}
-
-/* Rest-Styles (Video/Chat/Footer) wie vorher... */
-.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px; }
-.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-.chat-dark { width: 100%; height: 500px; border-radius: 15px; border: none; }
-footer { text-align: center; padding: 40px; background: #0a0a0f; }
-#backToTop { color: #888; text-decoration: none; padding: 10px 20px; border: 1px solid #333; border-radius: 30px; transition: 0.3s; }
+.live-led { width: 10px; height: 10px; background: #9146FF; border-radius: 50
