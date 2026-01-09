@@ -5,188 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason_Crossbow | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* --- BASIS & LAYOUT --- */
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif;
-            background: #050507; color: #ccc;
-            background-image: radial-gradient(circle at top, rgba(145,70,255,0.2), transparent 60%);
-            line-height: 1.6;
-        }
-        .container { max-width: 1000px; margin: 0 auto; width: 92%; }
-
-        /* --- HEADER --- */
-        header { padding: 60px 0 40px; text-align: center; }
-        h1 { color: #fff; font-size: 2.5rem; margin: 10px 0; }
-        #live-status { font-size: 0.9rem; color: #aaa; text-transform: uppercase; letter-spacing: 2px; }
-        .btn { 
-            display: inline-block; padding: 12px 30px; background: #9146FF; 
-            color: #fff; text-decoration: none; border-radius: 10px; font-weight: bold;
-            transition: 0.3s; margin-top: 15px;
-        }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(145, 70, 255, 0.5); }
-
-        #emote-banner { display: flex; justify-content: center; gap: 30px; margin-top: 35px; }
-        #emote-banner img { 
-            width: 50px; height: 50px; object-fit: contain; 
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-        }
-        #emote-banner img:hover { transform: scale(1.8) rotate(5deg); filter: drop-shadow(0 0 10px #9146FF); }
-
-        /* --- SEKTIONEN DESIGN --- */
-        section { 
-            margin-bottom: 50px; padding: 25px; 
-            background: rgba(15, 15, 25, 0.7); 
-            border-radius: 22px; border: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        #dashboard { background: transparent; border: none; padding: 0; }
-        .section-title { 
-            color: #fff; font-size: 1.8rem; margin: 0 0 25px 0; 
-            border-bottom: 3px solid #9146FF; display: inline-block; padding-bottom: 5px; 
-        }
-
-        /* --- BENTO DASHBOARD --- */
-        .bento-grid { display: flex; gap: 20px; align-items: stretch; }
-        .main-info { 
-            flex: 1.6; background: rgba(15, 15, 25, 0.95); 
-            border: 1px solid rgba(145, 70, 255, 0.3); padding: 30px; border-radius: 20px; 
-            display: flex; flex-direction: column; justify-content: center;
-        }
-        .main-info h2 { font-size: 2.2rem; color: #fff; margin: 10px 0; }
-        .right-column { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-        .bento-item { 
-            flex: 1; background: rgba(15, 15, 25, 0.95); border: 1px solid rgba(145, 70, 255, 0.3); 
-            padding: 22px; border-radius: 20px; display: flex; flex-direction: column; justify-content: center;
-        }
-
-        .vibe-card { flex-direction: row; align-items: center; gap: 15px; }
-        .vibe-icon { font-size: 2rem; color: #9146FF; filter: drop-shadow(0 0 8px #9146FF); }
-        .status-label { font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: bold; }
-        .status-value { font-size: 1.2rem; font-weight: bold; color: #fff; }
-
-        /* Follower Goal Layout */
-        .goal-header { display: flex; justify-content: space-between; align-items: flex-end; }
-        .progress-bar { background: #111; height: 12px; border-radius: 10px; margin-top: 10px; overflow: hidden; border: 1px solid #333; }
-        .progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; box-shadow: 0 0 10px #9146FF; }
-
-        /* --- SOCIALS GRID --- */
-        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .social-card { 
-            display: flex; flex-direction: column; align-items: center; padding: 30px; 
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); 
-            border-radius: 18px; text-decoration: none; color: #fff; transition: 0.4s;
-        }
-        .social-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.07); }
-        .social-card i { font-size: 2.8rem; margin-bottom: 12px; }
-        .discord:hover { border-color: #5865F2; box-shadow: 0 0 25px rgba(88, 101, 242, 0.4); }
-        .tiktok:hover { border-color: #ff0050; box-shadow: 0 0 25px rgba(255, 0, 80, 0.4); }
-        .instagram:hover { border-color: #E1306C; box-shadow: 0 0 25px rgba(225, 48, 108, 0.4); }
-        .discord i { color: #5865F2; }
-        .tiktok i { color: #ff0050; }
-        .instagram i { color: #E1306C; }
-
-        /* --- STREAM HISTORY & IG GLITCH --- */
-        .history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .history-card { 
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(145,70,255,0.1); 
-            padding: 25px; border-radius: 18px; text-decoration: none; color: inherit; transition: 0.3s;
-        }
-        .history-card:hover { border-color: #9146FF; transform: translateY(-5px); }
-        .card-tag { font-size: 0.7rem; background: #9146FF; color: #fff; padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 15px; }
-
-        /* INSTANT GAMING STYLE GLITCH */
-        .ig-glitch { 
-            position: relative; color: #fcee0a; font-weight: bold; text-transform: uppercase; 
-            letter-spacing: 2px; display: inline-block; font-size: 1.4rem;
-        }
-        .ig-glitch::before, .ig-glitch::after { 
-            content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent;
-        }
-        .ig-glitch::before { 
-            left: 2px; text-shadow: -2px 0 #ff00c1; 
-            clip-path: inset(0 0 0 0);
-            animation: glitch-anim-1 2s infinite linear alternate-reverse; 
-        }
-        .ig-glitch::after { 
-            left: -2px; text-shadow: 2px 0 #00fff9; 
-            clip-path: inset(0 0 0 0);
-            animation: glitch-anim-2 3s infinite linear alternate-reverse; 
-        }
-
-        @keyframes glitch-anim-1 {
-            0% { clip-path: inset(80% 0 1% 0); }
-            10% { clip-path: inset(10% 0 70% 0); }
-            20% { clip-path: inset(40% 0 40% 0); }
-            30% { clip-path: inset(10% 0 80% 0); }
-            40% { clip-path: inset(90% 0 5% 0); }
-            50% { clip-path: inset(0% 0 100% 0); }
-            100% { clip-path: inset(0% 0 100% 0); }
-        }
-        @keyframes glitch-anim-2 {
-            0% { clip-path: inset(0% 0 100% 0); }
-            60% { clip-path: inset(80% 0 1% 0); }
-            70% { clip-path: inset(10% 0 70% 0); }
-            80% { clip-path: inset(40% 0 40% 0); }
-            90% { clip-path: inset(10% 0 80% 0); }
-            100% { clip-path: inset(90% 0 5% 0); }
-        }
-
-        /* --- CHAT & FOOTER --- */
-        iframe { width: 100%; height: 500px; border: 1px solid rgba(145, 70, 255, 0.2); border-radius: 15px; background: #000; }
-        footer { text-align: center; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05); }
-        #backToTop { color: #888; text-decoration: none; border: 1px solid #333; padding: 10px 25px; border-radius: 30px; transition: 0.3s; }
-        #backToTop:hover { color: #fff; border-color: #9146FF; }
-
-        @media (max-width: 850px) {
-            .bento-grid, .social-grid, .history-grid { flex-direction: column; grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css?v=1.1"> </head>
 <body>
 
-<header>
-    <div id="live-status">Lädt Status...</div>
-    <h1>🎮 Jason_Crossbow</h1>
-    <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
-    
-    <div id="emote-banner">
-        <img src="assets/emotes/wave.png" alt="Wave">
-        <img src="assets/emotes/armbrust holz.png" alt="Armbrust">
-        <img src="assets/emotes/popcorn.png" alt="Popcorn">
-    </div>
-</header>
-
-<section id="dashboard">
-    <div class="bento-grid">
-        <div class="main-info">
-            <span class="status-label" style="color: #9146FF;">AKTIVE MISSION</span>
-            <h2>Variety & Noob Gaming</h2>
-            <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken.<br><strong>Fokus:</strong> Story-Games.</p>
+<div class="container"> <header>
+        <div id="live-status">Lädt Status...</div>
+        <h1>🎮 Jason_Crossbow</h1>
+        <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
+        
+        <div id="emote-banner">
+            <img src="assets/emotes/wave.png" alt="Wave">
+            <img src="assets/emotes/armbrust holz.png" alt="Armbrust">
+            <img src="assets/emotes/popcorn.png" alt="Popcorn">
         </div>
-        <div class="right-column">
-            <div class="bento-item vibe-card">
-                <i class="fas fa-fire vibe-icon"></i>
-                <div>
-                    <span class="status-label">Current Vibe</span>
-                    <div class="status-value">Grind & Chill</div>
+    </header>
+
+    <section id="dashboard">
+        <div class="bento-grid">
+            <div class="main-info">
+                <span class="status-label" style="color: #9146FF;">AKTIVE MISSION</span>
+                <h2>Variety & Noob Gaming</h2>
+                <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken.<br><strong>Fokus:</strong> Story-Games.</p>
+            </div>
+            <div class="right-column">
+                <div class="bento-item vibe-card">
+                    <i class="fas fa-fire vibe-icon"></i>
+                    <div>
+                        <span class="status-label">Current Vibe</span>
+                        <div class="status-value">Grind & Chill</div>
+                    </div>
+                </div>
+                <div class="bento-item">
+                    <div class="goal-header">
+                        <span class="status-label">Follower: <span id="current-followers">...</span> / 200</span>
+                        <span id="goal-percent" class="status-value" style="font-size: 0.9rem;">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="goal-bar" class="progress-fill" style="width: 0%;"></div>
+                    </div>
                 </div>
             </div>
-            <div class="bento-item">
-                <div class="goal-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
-                    <span class="status-label">Follower: <span id="current-followers">...</span> / 200</span>
-                    <span id="goal-percent" class="status-value" style="font-size: 0.9rem;">0%</span>
-                </div>
-                <div class="progress-bar" style="background: #111; height: 12px; border-radius: 10px; margin-top: 10px; overflow: hidden; border: 1px solid #333;">
-                    <div id="goal-bar" class="progress-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, #9146FF, #c194ff); transition: width 2s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px #9146FF;"></div>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
-
-<script src="script.js"></script>
+    </section>
 
     <section id="socials">
         <h2 class="section-title">Socials</h2>
@@ -229,14 +89,15 @@
 
     <section id="chat">
         <h2 class="section-title">Live-Chat</h2>
-        <iframe src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout"></iframe>
+        <iframe src="https://www.twitch.tv/embed/Jason_Crossbow/chat?parent=jasoncrossbow.github.io&darkpopout" class="chat-iframe"></iframe>
     </section>
 
     <footer>
         <a href="#" id="backToTop"><i class="fas fa-chevron-up"></i> Nach oben</a>
         <p style="margin-top: 25px;">&copy; 2026 Jason_Crossbow</p>
     </footer>
-</div>
+
+</div> <script src="script.js"></script>
 
 </body>
 </html>
