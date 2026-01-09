@@ -148,43 +148,40 @@
 
 <div class="container">
     <header>
-        <div id="live-status">Aktuell Offline</div>
-        <h1>🎮 Jason_Crossbow</h1>
-        <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
-        <div id="emote-banner">
-            <img src="assets/emotes/wave.png" alt="Wave">
-            <img src="assets/emotes/armbrust holz.png" alt="Armbrust">
-            <img src="assets/emotes/popcorn.png" alt="Popcorn">
-        </div>
+    <div id="live-status">Lädt Status...</div>
+    <h1>🎮 Jason_Crossbow</h1>
+    <a href="https://twitch.tv/Jason_Crossbow" class="btn" target="_blank">Zum Twitch Kanal</a>
     </header>
 
-    <section id="dashboard">
-        <div class="bento-grid">
-            <div class="main-info">
-                <span class="status-label" style="color: #9146FF;">AKTIVE MISSION</span>
-                <h2>Variety & Noob Gaming</h2>
-                <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken.<br><strong>Fokus:</strong> Story-Games.</p>
-            </div>
-            <div class="right-column">
-                <div class="bento-item vibe-card">
-                    <i class="fas fa-fire vibe-icon"></i>
-                    <div>
-                        <span class="status-label">Current Vibe</span>
-                        <div class="status-value">Grind & Chill</div>
-                    </div>
+<section id="dashboard">
+    <div class="bento-grid">
+        <div class="main-info">
+            <span class="status-label" style="color: #9146FF;">AKTIVE MISSION</span>
+            <h2>Variety & Noob Gaming</h2>
+            <p>Die stabilste Community aufbauen und jeden Tag aufs Neue verkacken.<br><strong>Fokus:</strong> Story-Games.</p>
+        </div>
+        <div class="right-column">
+            <div class="bento-item vibe-card">
+                <i class="fas fa-fire vibe-icon"></i>
+                <div>
+                    <span class="status-label">Current Vibe</span>
+                    <div class="status-value">Grind & Chill</div>
                 </div>
-                <div class="bento-item">
-                    <div class="goal-header">
-                        <span class="status-label">Follower Goal: 166 / 200</span>
-                        <span class="status-value" style="font-size: 0.9rem;">83%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 83%;"></div>
-                    </div>
+            </div>
+            <div class="bento-item">
+                <div class="goal-header">
+                    <span class="status-label">Follower: <span id="current-followers">...</span> / 200</span>
+                    <span id="goal-percent" class="status-value" style="font-size: 0.9rem;">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="goal-bar" class="progress-fill" style="width: 0%;"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<script src="script.js"></script>
 
     <section id="socials">
         <h2 class="section-title">Socials</h2>
