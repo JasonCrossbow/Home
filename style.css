@@ -20,6 +20,13 @@ header { padding: 60px 20px 40px; text-align: center; color: #fff; }
 #emote-banner { display: flex; justify-content: center; gap: 25px; margin-top: 30px; }
 #emote-banner img { width: 45px; height: 45px; object-fit: contain; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 #emote-banner img:hover { transform: scale(1.7) rotate(5deg); filter: drop-shadow(0 0 10px #9146FF); }
+#live-status.status-online { 
+    color: #ff4b4b !important; 
+    font-weight: bold; 
+    text-shadow: 0 0 10px rgba(255, 75, 75, 0.6);
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
 /* --- BENTO DASHBOARD --- */
 #dashboard { margin-bottom: 50px; }
