@@ -51,7 +51,13 @@ header { padding: 60px 20px 40px; text-align: center; color: #fff; }
 
 .goal-text { display: flex; justify-content: space-between; margin: 10px 0 8px; font-weight: bold; font-size: 0.85rem; }
 .progress-bar { background: #111; height: 10px; border-radius: 10px; border: 1px solid #333; overflow: hidden; }
-.progress-fill { background: linear-gradient(90deg, #9146FF, #c194ff); height: 100%; box-shadow: 0 0 10px rgba(145, 70, 255, 0.4); }
+.progress-fill {
+    background: linear-gradient(90deg, #9146FF, #c194ff);
+    height: 100%;
+    box-shadow: 0 0 10px #9146FF;
+    /* --- Das hier macht es smooth --- */
+    transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* --- SEKTIONEN ALLGEMEIN --- */
 section { margin-bottom: 60px; }
