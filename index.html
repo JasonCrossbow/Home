@@ -169,12 +169,12 @@
                 </div>
             </div>
             <div class="bento-item">
-                <div class="goal-header">
+                <div class="goal-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
                     <span class="status-label">Follower: <span id="current-followers">...</span> / 200</span>
                     <span id="goal-percent" class="status-value" style="font-size: 0.9rem;">0%</span>
                 </div>
-                <div class="progress-bar">
-                    <div id="goal-bar" class="progress-fill" style="width: 0%;"></div>
+                <div class="progress-bar" style="background: #111; height: 12px; border-radius: 10px; margin-top: 10px; overflow: hidden; border: 1px solid #333;">
+                    <div id="goal-bar" class="progress-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, #9146FF, #c194ff); transition: width 2s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 0 10px #9146FF;"></div>
                 </div>
             </div>
         </div>
